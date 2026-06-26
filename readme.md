@@ -1,79 +1,292 @@
+# 🤖 AgentLite
 
-## 🛠️ Technologies Used
+> **A lightweight, CPU-efficient offline AI agent framework for autonomous task execution without Large Language Models (LLMs), cloud APIs, or internet connectivity.**
 
-- **Python 3.13+** (Agents, Dashboard & Memory System)
-- **Google ADK** (Agent Development Kit)
-- **SQLite** (Long-term memory database)
-- **Tkinter** (GUI interfaces)
-- **Local File System** (JSON/CSV) for data storage
+AgentLite is an open-source research project that explores how intelligent software agents can perform real-world tasks using deterministic reasoning, modular skills, memory, planning, and rule-based decision making instead of large language models. The framework is designed to run efficiently on commodity hardware, making it suitable for edge devices, personal computers, embedded systems, and privacy-sensitive environments.
 
-## 📦 Repository
+---
 
-This project is available on GitHub: [google-Agent-Development-Kit](https://github.com/karkra911/google-Agent-Development-Kit)
+# 🎯 Vision
 
-**Branch:** `python-version` (Python implementation)
+Build an intelligent offline assistant that can:
 
-## ✨ Features
+* Understand structured commands
+* Plan multi-step tasks
+* Execute actions autonomously
+* Learn from previous executions
+* Operate entirely on local hardware
+* Consume minimal CPU and memory
+* Never require cloud services or LLM APIs
 
-- **Multi-Agent System**: Ingestion, Query, Insight, and Presentation agents
-- **Interactive Dashboard**: GUI for managing and running agents
-- **Long-Term Memory System**: Persistent storage with SQLite database
-- **Memory GUI**: Visual interface for managing agent memories
-- **Evaluator Tool**: Test and evaluate agent performance
+---
 
-## 🚀 How to Run
+# ✨ Core Principles
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/karkra911/google-Agent-Development-Kit.git
-   cd google-Agent-Development-Kit
-   git checkout python-version
-   ```
+* 🚫 No Large Language Models
+* 🚫 No Cloud APIs
+* 🚫 No Internet Required
+* 🚫 No GPU Required
+* ✅ CPU Optimized
+* ✅ Offline First
+* ✅ Deterministic Reasoning
+* ✅ Modular Architecture
+* ✅ Extensible Skills
+* ✅ Privacy by Design
 
-2. Ensure Python 3.13+ is installed.
+---
 
-3. Create a virtual environment and install dependencies:
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # Windows
-   # source .venv/bin/activate  # Linux/Mac
-   pip install google-adk requests
-   ```
+# 🚀 Features
 
-4. Run the ADK Dashboard to manage agents:
-   ```bash
-   python adk_dashboard.py
-   ```
+## 🧠 Reasoning Engine
 
-5. Run the Long-Term Memory GUI:
-   ```bash
-   python long_term_memory_gui.py
-   ```
+* Rule-based reasoning
+* Decision trees
+* Goal-oriented execution
+* Task decomposition
+* Conditional workflows
 
-6. Run the Evaluator GUI:
-   ```bash
-   python adk_evaluator_gui.py
-   ```
+---
 
-## 📁 Project Structure
+## 📋 Task Planner
 
+* Multi-step planning
+* Task prioritization
+* Dependency resolution
+* Retry mechanisms
+* Execution history
+
+---
+
+## 💾 Memory System
+
+* Short-term memory
+* Long-term memory
+* Persistent storage
+* Context retrieval
+* Task history
+
+---
+
+## 🔧 Skill System
+
+* File operations
+* Folder management
+* Process execution
+* System utilities
+* Custom skills
+* Plugin support
+
+---
+
+## ⚙️ Automation
+
+* Scheduled tasks
+* Event-driven execution
+* Background workers
+* Watch folders
+* Local triggers
+
+---
+
+## 📊 Monitoring
+
+* Execution logs
+* Performance metrics
+* Task statistics
+* Error reporting
+* Debug mode
+
+---
+
+# 🏗 System Architecture
+
+```text
+                   User
+                     │
+                     ▼
+             Command Interface
+                     │
+                     ▼
+            Intent Recognition
+                     │
+                     ▼
+               Task Planner
+                     │
+        ┌────────────┼────────────┐
+        │            │            │
+        ▼            ▼            ▼
+ Rule Engine     Memory      Skill Manager
+        │            │            │
+        └────────────┼────────────┘
+                     ▼
+             Task Executor
+                     │
+                     ▼
+           Operating System
 ```
-├── code/
-│   ├── agents/          # Agent implementations
-│   ├── config/          # Configuration files
-│   └── shared/          # Shared utilities
-├── adk_dashboard.py     # Main dashboard GUI
-├── adk_evaluator_gui.py # Agent evaluation tool
-├── long_term_memory_gui.py # Memory management GUI
-├── long_term_memory.py  # Memory system core
-├── memory_database.py   # Database operations
-└── memory_retrieval.py  # Memory retrieval logic
+
+---
+
+# 📂 Project Structure
+
+```text
+agentlite/
+│
+├── core/
+│   ├── planner/
+│   ├── reasoning/
+│   ├── scheduler/
+│   ├── executor/
+│   └── dispatcher/
+│
+├── memory/
+│
+├── skills/
+│
+├── plugins/
+│
+├── automation/
+│
+├── storage/
+│
+├── config/
+│
+├── docs/
+│
+├── tests/
+│
+├── examples/
+│
+└── .github/
 ```
 
-## 📌 Notes
+---
 
-- Configuration is handled via `code/config/config.json`
-- Memory configuration in `memory_config.json`
-- Agents operate on local files in `data/input` and `data/output`
-- Long-term memory stored in `memory_database.db`
-- See `LONG_TERM_MEMORY_README.md` for memory system documentation
+# 🛠 Example Tasks
+
+* Organize files
+* Rename folders
+* Search documents
+* Generate reports
+* Monitor CPU usage
+* Monitor disk usage
+* Launch applications
+* Execute scripts
+* Backup directories
+* Schedule recurring tasks
+* Clean temporary files
+* Process CSV files
+
+---
+
+# ⚙️ Design Goals
+
+* Low CPU utilization
+* Low memory footprint
+* Fast startup time
+* Zero cloud dependency
+* Predictable execution
+* High reliability
+* Modular components
+* Easy extensibility
+
+---
+
+# 📌 Technology Goals
+
+* Python
+* SQLite
+* JSON Configuration
+* YAML Configuration
+* Plugin SDK
+* Cross-platform support
+* Docker support
+* GitHub Actions
+
+---
+
+# 🗺 Roadmap
+
+## M1 — Core Foundation
+
+* Project architecture
+* Configuration system
+* Logging
+* Task executor
+
+## M2 — Memory Engine
+
+* Short-term memory
+* Persistent storage
+* Retrieval engine
+
+## M3 — Planning Engine
+
+* Task planner
+* Goal management
+* Workflow execution
+
+## M4 — Skill Framework
+
+* File system skills
+* Process management
+* Plugin SDK
+
+## M5 — Automation Engine
+
+* Scheduler
+* Background workers
+* Event triggers
+
+## M6 — Monitoring
+
+* Metrics
+* Dashboard
+* Debugging tools
+
+## M7 — Performance Optimization
+
+* CPU optimization
+* Memory optimization
+* Benchmarking
+
+## M8 — Stable Release
+
+* Documentation
+* Examples
+* Tutorials
+* Unit tests
+* CI/CD
+* Production release
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+You can help by:
+
+* Developing new skills
+* Improving the planning engine
+* Optimizing performance
+* Writing tests
+* Enhancing documentation
+* Fixing bugs
+* Designing plugins
+
+---
+
+# 📜 License
+
+Licensed under the Apache License 2.0.
+
+---
+
+# ⭐ Research Goal
+
+AgentLite explores a fundamental systems engineering question:
+
+> **Can a lightweight, CPU-efficient offline agent perform useful autonomous tasks using planning, memory, modular skills, and deterministic reasoning—without relying on Large Language Models or cloud services?**
+
+The project serves as a research platform for efficient autonomous software agents and emphasizes transparency, privacy, predictable behavior, and resource-efficient execution.
